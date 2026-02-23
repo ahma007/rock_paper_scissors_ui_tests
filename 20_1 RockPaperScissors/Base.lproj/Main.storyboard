@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_0_1_RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="C2e-fG-GXF">
+                                <rect key="frame" x="60" y="207" width="255" height="253"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="2jk-gS-mvT">
+                                        <rect key="frame" x="1.5" y="0.0" width="252" height="121"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aN1-c9-0nW">
+                                                <rect key="frame" x="93.5" y="0.0" width="65" height="72"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Камень, Ножницы, Бумага?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tJ-lZ-Eib">
+                                                <rect key="frame" x="0.0" y="97" width="252" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="VX2-WV-Mib">
+                                        <rect key="frame" x="0.0" y="128" width="255" height="84"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uba-x9-OBD">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="84"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <state key="normal" title="👊"/>
+                                                <connections>
+                                                    <action selector="rockSignPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gKF-Qq-Fk1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhB-Ks-MPc">
+                                                <rect key="frame" x="95" y="0.0" width="65" height="84"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <state key="normal" title="✌️"/>
+                                                <connections>
+                                                    <action selector="scissorsSignPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dEF-VI-QoZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cF-zK-aDc">
+                                                <rect key="frame" x="190" y="0.0" width="65" height="84"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <state key="normal" title="✋"/>
+                                                <connections>
+                                                    <action selector="paperSignPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3qa-7b-ejA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QR1-Yx-lJf">
+                                        <rect key="frame" x="71" y="219" width="113" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Играть снова"/>
+                                        <connections>
+                                            <action selector="restartGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uex-b1-3Hb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sst-7L-xdr">
+                                <rect key="frame" x="123" y="612" width="147" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Лучшие игроки" titleAlignment="center"/>
+                                <connections>
+                                    <segue destination="EnU-YX-GJ9" kind="presentation" id="1r9-KB-ny3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="C2e-fG-GXF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="et8-YX-gJ5"/>
+                            <constraint firstItem="C2e-fG-GXF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xna-KI-lDN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gLn-xZ-tDn"/>
+                    <connections>
+                        <outlet property="bestPlayers" destination="Sst-7L-xdr" id="IRQ-Jx-mXq"/>
+                        <outlet property="botSignLabel" destination="aN1-c9-0nW" id="L5r-6M-4zS"/>
+                        <outlet property="gameStateLabel" destination="3tJ-lZ-Eib" id="Xkd-Uk-N0m"/>
+                        <outlet property="paperButton" destination="2cF-zK-aDc" id="VKP-EU-77n"/>
+                        <outlet property="playAgainButton" destination="QR1-Yx-lJf" id="KIB-Sj-TQU"/>
+                        <outlet property="rockButton" destination="Uba-x9-OBD" id="xRG-ki-JAY"/>
+                        <outlet property="scissorsButton" destination="RhB-Ks-MPc" id="lST-u4-eZK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21.600000000000001" y="20.239880059970016"/>
+        </scene>
+        <!--View Controller Modal-->
+        <scene sceneID="TJM-DJ-Be6">
+            <objects>
+                <viewController id="EnU-YX-GJ9" userLabel="View Controller Modal" customClass="ModalViewController1" customModule="_0_1_RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Stf-Qz-edf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xe7-xU-3sl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Best of the best" id="gwS-M7-9ob">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="jNl-f3-mxD">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="k5L-IK-P8C">
+                                                <rect key="frame" x="16" y="11" width="75" height="34.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                                                <connections>
+                                                    <action selector="dis:" destination="EnU-YX-GJ9" eventType="touchUpInside" id="ncq-dy-J2p"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Бумажная бумага" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6I-c5-8SK">
+                                <rect key="frame" x="116" y="105" width="142" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Каменный камень" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bw9-VF-BFn">
+                                <rect key="frame" x="115" y="149" width="145" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ножничные ножницы" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qa7-gY-VSV">
+                                <rect key="frame" x="101" y="191" width="173" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="elR-nq-kEL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="dismiss" destination="k5L-IK-P8C" id="Xen-2R-VuD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pc5-5g-qS5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="688.79999999999995" y="19.340329835082461"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
