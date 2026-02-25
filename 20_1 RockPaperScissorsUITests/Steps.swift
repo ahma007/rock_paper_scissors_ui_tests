@@ -71,7 +71,7 @@ final class Steps {
         )
     }
     
-    // Проверяем виден ли Текст «Камень, Ножницы, Бумага?
+    // Проверяем виден ли Текст "Камень, Ножницы, Бумага?"
     func checkGameStateLabel() {
         XCTAssertTrue(
             screen.gameStateLabel.waitForExistence(timeout: 5),
