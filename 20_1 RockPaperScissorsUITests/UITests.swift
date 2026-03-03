@@ -9,11 +9,10 @@
 import XCTest
 
 class UITests: BaseTestCase {
-
+    
     // целиком проверка главного экрана
     func testAllElementsOnMainScreen() {
         
-        steps.launchApp() // запускаем приложение - отображаем главный экран
         steps.checkBestPlayersButtonIsVisible() // находим кнопку "Лучшие игроки"
         steps.checkScissorButtonIsVisible() // находим кнопку ножницы
         steps.checkPaperButtonIsVisible() // находим кнопку бумага
@@ -24,19 +23,20 @@ class UITests: BaseTestCase {
     
     // проверка бш Лучшие игроки
     func testBestPlayersFlow() {
-
-            steps.launchApp() // запускаем приложение - отображаем главный экран
-            steps.checkBestPlayersButtonIsVisible() // находим кнопку "Лучшие игроки"
-            steps.openBestPlayers() // тапаем на кнопку "Лучшие игроки" - открываем бш "Best of the best"
-            steps.checkPlayersAreVisible() // находим список игроков
-            steps.checkCloseButtonAreVisible() // находим кнопку "Close"
-            steps.closeBestPlayers() // тапаем на кнопку "Close" - закрываем бш "Best of the best" - отображаем главный экран
-        }
+        
+        steps.checkBestPlayersButtonIsVisible() // находим кнопку "Лучшие игроки"
+        steps.tapBestPlayers() // тапаем на кнопку "Лучшие игроки" - открываем бш "Best of the best"
+        steps.checkBestOfTheBestLabelVisible() // находим текст "Best of the best"
+        steps.checkPlayersAreVisible() // находим список игроков
+        steps.checkCloseButtonAreVisible() // находим кнопку "Close"
+        steps.closeBestPlayers() // тапаем на кнопку "Close" - закрываем бш "Best of the best" - отображаем главный экран
+        steps.checkBestPlayersButtonIsVisible() // находим кнопку "Лучшие игроки", как проверочный элемент, что мы на главном экране
+    }
     
     // Нажали камень - проверили экран
     func testRockDraws() {
-        steps.launchApp() // запускаем приложение - отображаем главный экран
-        steps.makeMove(.rock) // тапаем на кнопку камень - показываем новое состояние экрана 
+        
+        steps.tapRock() // тапаем на кнопку камень - показываем новое состояние экрана
         steps.checkBotSignLabel() // находим иконку камень
         steps.checkGameStateLabel() // находим текст "Ничья!=/"
         steps.checkPlayAgainButtonIsVisible() // находим кнопку "Играть снова"
@@ -44,8 +44,8 @@ class UITests: BaseTestCase {
     
     // Нажали ножницы - проверили экран
     func testScissorsWins() {
-        steps.launchApp() // запускаем приложение - отображаем главный экран
-        steps.makeMove(.scissors) // тапаем на кнопку ножницы - показываем новое состояние экрана
+        
+        steps.tapScissors() // тапаем на кнопку ножницы - показываем новое состояние экрана
         steps.checkBotSignLabel() // находим иконки ножницы и бумага
         steps.checkGameStateLabel() // находим текст "Вы победили!=)"
         steps.checkPlayAgainButtonIsVisible() // находим кнопку "Играть снова"
@@ -53,8 +53,8 @@ class UITests: BaseTestCase {
     
     // Нажали бумагу - проверили экран
     func testPaperLose() {
-        steps.launchApp() // запускаем приложение - отображаем главный экран
-        steps.makeMove(.paper) // тапаем на кнопку бумага - показываем новое состояние экрана
+        
+        steps.tapPaper() // тапаем на кнопку бумага - показываем новое состояние экрана
         steps.checkBotSignLabel() // находим иконки бумага и ножницы
         steps.checkGameStateLabel() // находим текст "Вы проиграли!=("
         steps.checkPlayAgainButtonIsVisible() // находим кнопку "Играть снова"
@@ -62,8 +62,8 @@ class UITests: BaseTestCase {
     
     // работоспособность кнопки Играть снова
     func testTapPlayAgain() {
-        steps.launchApp() // запускаем приложение - отображаем главный экран
-        steps.makeMove(.paper) // тапаем на любую кнопку например на бумагу - показываем новое состояние экрана
+        
+        steps.tapPaper() // тапаем на любую кнопку, например на бумагу - показываем новое состояние экрана
         steps.checkPlayAgainButtonIsVisible() // находим кнопку "Играть снова"
         steps.tapPlayAgain() // тапаем на кнопку "Играть снова" - возвращаем дефолтное состояние главного экрана
     }

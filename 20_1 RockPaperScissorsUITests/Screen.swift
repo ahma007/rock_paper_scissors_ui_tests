@@ -8,28 +8,22 @@
 
 import XCTest
 
-enum Move {
-    case rock
-    case paper
-    case scissors
-}
-
 final class Screen {
-
+    
     private let app: XCUIApplication
-
+    
     init(
         app: XCUIApplication
     ) {
         self.app = app
     }
-
-    // Элемент - иконка робота на главном экране
+    
+    // Элементы - иконки на главном экране
     var botSignLabel: XCUIElement {
         app.staticTexts["botSignLabel"]
     }
     
-    // Элемент - текст 'Камень, Ножницы, Бумага?' на главном экране
+    // Элементы - тексты на главном экране
     var gameStateLabel: XCUIElement {
         app.staticTexts["gameStateLabel"]
     }
@@ -54,44 +48,9 @@ final class Screen {
         app.buttons["Лучшие игроки"]
     }
     
-    // Элемент - кнопка 'Играть снова' на главном экране при тапе на кнопки камень, ножницы или бумагу
+    // Элемент - кнопка 'Играть снова' на главном экране (появляется при тапе на кнопки камень, ножницы или бумагу)
     var playAgainButton: XCUIElement {
         app.buttons["playAgainButton"]
-    }
-    
-    func waitForScreen(timeout: TimeInterval = 5) -> Bool {
-            return gameStateLabel.waitForExistence(timeout: timeout)
-        }
-    
-    func tapMove(_ move: Move) {
-            button(for: move).tap()
-        }
-    
-    private func button(for move: Move) -> XCUIElement {
-        switch move {
-                case .rock: return rockButton
-                case .scissors: return scissorsButton
-                case .paper: return paperButton
-                }
-    }
-    
-    func tapPlayAgain() {
-            playAgainButton.tap()
-        }
-
-    func openBestPlayers() {
-            bestPlayersButton.tap()
-        }
-}
-
-final class BottomSheet {
-    
-    private let app: XCUIApplication
-
-    init(
-        app: XCUIApplication
-    ) {
-        self.app = app
     }
     
     // Элемент - навбар с текстом "Best of the best"
@@ -102,6 +61,11 @@ final class BottomSheet {
     // Элемент - кнопка "Close"
     var closeButton: XCUIElement {
         navBar.buttons["Close"]
+    }
+    
+    // Элемент - текст "Best of the best" в БШ
+    var bestOfTheBestLabel: XCUIElement {
+        navBar.staticTexts["Best of the best"]
     }
     
     // Элемент - текст "Бумажная бумага"
@@ -118,14 +82,4 @@ final class BottomSheet {
     var scissorPlayerLabel: XCUIElement {
         app.staticTexts["Ножничные ножницы"]
     }
-    
-    func waitForSheet(timeout: TimeInterval = 5) -> Bool {
-            return navBar.waitForExistence(timeout: timeout)
-        }
-
-        func close() {
-            closeButton.tap()
-        }
 }
-
-
