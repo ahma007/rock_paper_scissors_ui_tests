@@ -26,11 +26,11 @@ class UITests: BaseTestCase {
         
         steps.checkBestPlayersButtonIsVisible() // находим кнопку "Лучшие игроки"
         steps.tapBestPlayers() // тапаем на кнопку "Лучшие игроки" - открываем бш "Best of the best"
-        steps.checkBestOfTheBestLabelVisible() // находим текст "Best of the best"
-        steps.checkPlayersAreVisible() // находим список игроков
-        steps.checkCloseButtonAreVisible() // находим кнопку "Close"
+        steps.checkBestOfTheBestLabelVisible() // находим текст "Best of the best" в бш
+        steps.checkPlayersAreVisible() // находим список игроков в бш
+        steps.checkCloseButtonAreVisible() // находим кнопку "Close" в бш
         steps.closeBestPlayers() // тапаем на кнопку "Close" - закрываем бш "Best of the best" - отображаем главный экран
-        steps.checkBestPlayersButtonIsVisible() // находим кнопку "Лучшие игроки", как проверочный элемент, что мы на главном экране
+        steps.checkNavBarIsNotVisible() // проверяем, что бш "Best of the best" закрыт 
     }
     
     // Нажали камень - проверили экран
@@ -63,8 +63,11 @@ class UITests: BaseTestCase {
     // работоспособность кнопки Играть снова
     func testTapPlayAgain() {
         
-        steps.tapPaper() // тапаем на любую кнопку, например на бумагу - показываем новое состояние экрана
+        steps.tapPaper() // тапаем на любую игровую кнопку, например на бумагу - показываем новое состояние экрана
+        steps.checkBestPlayersButtonIsNotVisible() //
         steps.checkPlayAgainButtonIsVisible() // находим кнопку "Играть снова"
         steps.tapPlayAgain() // тапаем на кнопку "Играть снова" - возвращаем дефолтное состояние главного экрана
+        steps.checkPlayAgainButtonIsNotVisible() //
+        steps.checkBestPlayersButtonIsVisible() // находим кнопку "Лучшие игроки", как проверочный элемент, что мы на главном экране
     }
 }

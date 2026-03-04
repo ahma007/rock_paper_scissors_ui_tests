@@ -34,6 +34,14 @@ final class Steps {
         )
     }
     
+    // Проверяем отсутствует ли кнопка «Лучшие игроки»
+    func checkBestPlayersButtonIsNotVisible() {
+        XCTAssertFalse(
+            screen.bestPlayersButton.waitForExistence(timeout: 5),
+            "Кнопка «Лучшие игроки» видна"
+        )
+    }
+    
     // Проверяем видна ли кнопка «Ножницы»
     func checkScissorButtonIsVisible() {
         XCTAssertTrue(
@@ -77,9 +85,15 @@ final class Steps {
     // Проверяем видна ли кнопка «Играть снова»
     func checkPlayAgainButtonIsVisible() {
         XCTAssertTrue(
-            screen.playAgainButton
-                .waitForExistence(timeout: 5),
+            screen.playAgainButton.waitForExistence(timeout: 5),
             "Отсутствует кнопка 'Играть снова'")
+    }
+    
+    // Проверяем отсутствует ли кнопка «Играть снова»
+    func checkPlayAgainButtonIsNotVisible() {
+        XCTAssertFalse(
+            screen.playAgainButton.waitForExistence(timeout: 5),
+            "Ототбражается кнопка 'Играть снова'")
     }
     
     // Проверяем, что при нажатии на кнопку "Играть снова" снова отображается главный экран
@@ -102,8 +116,9 @@ final class Steps {
     
     // Проверяем, что в БШ есть текст "Best of the best"
     func checkBestOfTheBestLabelVisible() {
-        XCTAssertTrue(screen.bestOfTheBestLabel.waitForExistence(timeout: 5),
-                      "Текст Best of the best не появился"
+        XCTAssertTrue(
+            screen.bestOfTheBestLabel.waitForExistence(timeout: 5),
+            "Текст Best of the best не появился"
         )
     }
     
@@ -113,12 +128,15 @@ final class Steps {
             screen.closeButton.waitForExistence(timeout: 5),
             "Главный экран не появился снова"
         )
+        screen.closeButton.tap()
     }
     
     // Проверяем видна ли кнопка «Close» в БШ
     func checkCloseButtonAreVisible() {
-        XCTAssertTrue(screen.closeButton.waitForExistence(timeout: 5),
-                      "Отсутствует кнопка 'Close'")
+        XCTAssertTrue(
+            screen.closeButton.waitForExistence(timeout: 5),
+            "Отсутствует кнопка 'Close'"
+        )
     }
     
     // Проверяем видны ли тексты "Бумажная бумага", "Каменный камень" и "Ножничные ножницы" в БШ
@@ -128,11 +146,18 @@ final class Steps {
         XCTAssertTrue(screen.scissorPlayerLabel.exists)
     }
     
+    // Проверяем, что не отображается бш с текстом "Best of the best"
+    func checkNavBarIsNotVisible() {
+        XCTAssertFalse(
+            screen.navBar.waitForExistence(timeout: 5),
+            "Отображается навбар с текстом 'Best of the best'"
+        )
+    }
+    
     // проверяем нажатие на кнопку «Ножницы»
     func tapScissors() {
         XCTAssertTrue(
-            screen.scissorsButton
-                .waitForExistence(timeout: 5),
+            screen.scissorsButton.waitForExistence(timeout: 5),
             "Отсутствует кнопка 'Ножницы'"
         )
         screen.scissorsButton.tap()
@@ -141,8 +166,7 @@ final class Steps {
     // проверяем нажатие на кнопку «Камень»
     func tapRock() {
         XCTAssertTrue(
-            screen.rockButton
-                .waitForExistence(timeout: 5),
+            screen.rockButton.waitForExistence(timeout: 5),
             "Отсутствует кнопка 'Камень'"
         )
         screen.rockButton.tap()
@@ -151,8 +175,7 @@ final class Steps {
     // проверяем нажатие на кнопку «Бумага»
     func tapPaper() {
         XCTAssertTrue(
-            screen.paperButton
-                .waitForExistence(timeout: 5),
+            screen.paperButton.waitForExistence(timeout: 5),
             "Отсутствует кнопка 'Бумага'"
         )
         screen.paperButton.tap()
