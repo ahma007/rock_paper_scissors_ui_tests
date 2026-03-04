@@ -26,7 +26,7 @@ final class Steps {
         // self.bottomSheet = BottomSheet(app: app)
     }
     
-    // Проверяем видна ли кнопка «Лучшие игроки»
+    // Проверяем видна ли кнопка «Лучшие игроки» на главном экране (дефолтное состояние экрана)
     func checkBestPlayersButtonIsVisible() {
         XCTAssertTrue(
             screen.bestPlayersButton.waitForExistence(timeout: 5),
@@ -34,7 +34,7 @@ final class Steps {
         )
     }
     
-    // Проверяем отсутствует ли кнопка «Лучшие игроки»
+    // Проверяем отсутствует ли кнопка «Лучшие игроки» при открытии нового состояния экрана (тапнув на любую игровую кнопку- «Камень»,«Ножницы» или «Бумага»)
     func checkBestPlayersButtonIsNotVisible() {
         XCTAssertFalse(
             screen.bestPlayersButton.waitForExistence(timeout: 5),
@@ -66,7 +66,7 @@ final class Steps {
         )
     }
     
-    // Проверяем видны ли иконки на главном экране
+    // Проверяем видны ли иконки на экране
     func checkBotSignLabel() {
         XCTAssertTrue(
             screen.botSignLabel.waitForExistence(timeout: 5),
@@ -74,11 +74,11 @@ final class Steps {
         )
     }
     
-    // Проверяем видны ли тексты на главном экране
+    // Проверяем видны ли тексты на экране
     func checkGameStateLabel() {
         XCTAssertTrue(
             screen.gameStateLabel.waitForExistence(timeout: 5),
-            "Тексты на главном экране не виден"
+            "Тексты на главном экране не видны"
         )
     }
     
@@ -89,14 +89,14 @@ final class Steps {
             "Отсутствует кнопка 'Играть снова'")
     }
     
-    // Проверяем отсутствует ли кнопка «Играть снова»
+    // Проверяем отсутствует ли кнопка «Играть снова» на главном экране (дефолтное состояние экрана)
     func checkPlayAgainButtonIsNotVisible() {
         XCTAssertFalse(
             screen.playAgainButton.waitForExistence(timeout: 5),
-            "Ототбражается кнопка 'Играть снова'")
+            "Отображается кнопка 'Играть снова'")
     }
     
-    // Проверяем, что при нажатии на кнопку "Играть снова" снова отображается главный экран
+    // Проверяем, что при нажатии на кнопку "Играть снова" отображается главный экран (дефолтное состояние)
     func tapPlayAgain() {
         XCTAssertTrue(
             screen.playAgainButton.waitForExistence(timeout: 5),

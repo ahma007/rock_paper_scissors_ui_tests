@@ -64,10 +64,10 @@ class UITests: BaseTestCase {
     func testTapPlayAgain() {
         
         steps.tapPaper() // тапаем на любую игровую кнопку, например на бумагу - показываем новое состояние экрана
-        steps.checkBestPlayersButtonIsNotVisible() //
+        steps.checkBestPlayersButtonIsNotVisible() // проверяем отсутствует ли кнопка «Лучшие игроки» в новом состоянии экрана
         steps.checkPlayAgainButtonIsVisible() // находим кнопку "Играть снова"
         steps.tapPlayAgain() // тапаем на кнопку "Играть снова" - возвращаем дефолтное состояние главного экрана
-        steps.checkPlayAgainButtonIsNotVisible() //
+        steps.checkPlayAgainButtonIsNotVisible() // проверяем отсутствует ли кнопка «Играть снова», для проверки, что мы на главном экране
         steps.checkBestPlayersButtonIsVisible() // находим кнопку "Лучшие игроки", как проверочный элемент, что мы на главном экране
     }
 }
